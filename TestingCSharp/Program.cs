@@ -14,48 +14,10 @@
 //
 // var actualFilteredList = _directories.All.AsQueryable().Where(lambda).ToList();
 
+using BenchmarkDotNet.Running;
+using TestingCSharp.Infrastructure;
+using TestingCSharp.Infrastructure.StructureClass;
+using TestingCSharp.StringConcatBuilder;
 
-// Так как файл не большой, то можно читать сразу весь, иначе построчно читать файл
 
-
-var fileName = "./Test.txt";
-var allText = File.ReadAllText(fileName);
-// Предполагаю что каждое слово в новой строчке, по ТЗ не понятно
-var lines = allText.Split("\n")
-    .Select(ParseLine)
-    .Where(q => q != null)
-    .ToList();
-
-var wordCounts = lines
-    .GroupBy(word => word,
-        (key, list) => new WordCount
-        {
-            Word = key,
-            FileName = fileName,
-            Count = list.Count()
-        }).ToArray();
-
-string ParseLine(string line)
-{
-    if (string.IsNullOrWhiteSpace(line))
-        return null;
-    return line.Trim();
-}
-
-public class WordCount
-{
-    public string Word { get; set; }
-    // index
-    public string FileName { get; set; }
-    public int Count { get; set; } = 0;
-}
-
-/*
-CREATE TABLE WordCount
-(
-    Word NVARCHAR(20),
-    FileName NVARCHAR(20),
-    Count INT
-);
-// index word_filename
-*/
+BenchmarkRunner.Run<ListArrayTest>();
