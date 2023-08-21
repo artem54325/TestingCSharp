@@ -1,0 +1,21 @@
+// using System.Diagnostics;
+//
+// namespace TestingCSharp.ParallelL;
+//
+// public class ParallelC
+// {
+//     public static void Main()
+//     {
+//         var timer = new Stopwatch(); 
+//         timer.Start();
+//         Parallel.Invoke(
+//             () => Helper.HeavyComputation("A"),
+//             () => Helper.HeavyComputation("B"),
+//             () => Helper.HeavyComputation("C"),
+//             () => Helper.HeavyComputation("D"),
+//             () => Helper.HeavyComputation("E")
+//         );
+//         timer.Stop();
+//         Console.WriteLine("All: " + timer.ElapsedMilliseconds);
+//     }
+// }

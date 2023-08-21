@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>TestingCSharp.Span.SpanSum-20230708-003115</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.5, OS=macOS Ventura 13.4.1 (22F82) [Darwin 22.5.0]
+Intel Core i9-9880H CPU 2.30GHz, 1 CPU, 16 logical and 8 physical cores
+.NET SDK=7.0.101
+  [Host]     : .NET 7.0.1 (7.0.122.56804), X64 RyuJIT AVX2
+  DefaultJob : .NET 7.0.1 (7.0.122.56804), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>N</th><th>Mean</th><th>Error</th><th>StdDev</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>Linq</td><td>100</td><td>42.77 ns</td><td>0.687 ns</td><td>0.537 ns</td><td>-</td>
+</tr><tr><td>Span</td><td>100</td><td>41.00 ns</td><td>0.851 ns</td><td>2.135 ns</td><td>-</td>
+</tr><tr><td>Span_Checked</td><td>100</td><td>44.78 ns</td><td>0.916 ns</td><td>1.479 ns</td><td>-</td>
+</tr><tr><td>Linq</td><td>10000</td><td>46.55 ns</td><td>0.953 ns</td><td>1.967 ns</td><td>-</td>
+</tr><tr><td>Span</td><td>10000</td><td>40.41 ns</td><td>0.847 ns</td><td>1.319 ns</td><td>-</td>
+</tr><tr><td>Span_Checked</td><td>10000</td><td>45.42 ns</td><td>0.943 ns</td><td>2.750 ns</td><td>-</td>
+</tr><tr><td>Linq</td><td>1000000</td><td>45.74 ns</td><td>0.949 ns</td><td>2.162 ns</td><td>-</td>
+</tr><tr><td>Span</td><td>1000000</td><td>40.77 ns</td><td>0.838 ns</td><td>2.040 ns</td><td>-</td>
+</tr><tr><td>Span_Checked</td><td>1000000</td><td>41.21 ns</td><td>0.748 ns</td><td>0.700 ns</td><td>-</td>
+</tr></tbody></table>
+</body>
+</html>
