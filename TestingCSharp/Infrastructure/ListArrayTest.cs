@@ -13,6 +13,7 @@ public class ListArrayTest
     [Params(100)] public long n = 100_000;
     string[] valsArray;
     List<string> valsList = new();
+    LinkedList<string> valsLinkedList = new();
     
     [GlobalSetup]
     public void GlobalSetup()
@@ -22,6 +23,7 @@ public class ListArrayTest
         {
             valsArray[i] = Guid.NewGuid().ToString();
             valsList.Add(valsArray[i]);
+            valsLinkedList.AddLast(valsArray[i]);
         }
     }
     
@@ -35,6 +37,26 @@ public class ListArrayTest
             li.Add(i);
         }
     }
+    [Benchmark]
+    public void LinkedListFirst()
+    {
+        var li = new LinkedList<int>();
+
+        for (int i = 0; i < n; i++)
+        {
+            li.AddFirst(i);
+        }
+    }
+    [Benchmark]
+    public void LinkedListLast()
+    {
+        var li = new LinkedList<int>();
+
+        for (int i = 0; i < n; i++)
+        {
+            li.AddLast(i);
+        }
+    }
     
     [Benchmark]
     public void ListToArray()
@@ -42,6 +64,15 @@ public class ListArrayTest
         for (int i = 0; i < n; i++)
         {
             var strings = valsList.ToArray();
+        }
+    }
+    
+    [Benchmark]
+    public void LinkedToArray()
+    {
+        for (int i = 0; i < n; i++)
+        {
+            var strings = valsLinkedList.ToArray();
         }
     }
     
@@ -60,6 +91,15 @@ public class ListArrayTest
         for (int i = 0; i < n; i++)
         {
             var strings = valsList.Where(q=>q == "-").ToArray();
+        }
+    }
+    
+    [Benchmark]
+    public void LinkedWhere()
+    {
+        for (int i = 0; i < n; i++)
+        {
+            var strings = valsLinkedList.Where(q=>q == "-").ToArray();
         }
     }
     
@@ -148,7 +188,6 @@ public class ListArrayTest
             };
         }
     }
-
     //Array object
     [Benchmark]
     public void ArrayObject()
