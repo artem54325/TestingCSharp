@@ -15,6 +15,7 @@
 // var actualFilteredList = _directories.All.AsQueryable().Where(lambda).ToList();
 
 using BenchmarkDotNet.Running;
+using TestingCSharp.AsyncAndMultipleThread;
 using TestingCSharp.Infrastructure;
 using TestingCSharp.Infrastructure.StructureClass;
 using TestingCSharp.Span;
@@ -22,7 +23,7 @@ using TestingCSharp.StringConcatBuilder;
 
 
 // BenchmarkRunner.Run<SpanSum>();
-Demo();
+AsyncDemo.Demo();
 
 // static async Task Test()
 // {
@@ -38,20 +39,3 @@ Demo();
 //     child.Wait();
 //     Console.WriteLine("finished");
 // }
-static async Task<string> DelayAsync()
-{
-    Console.WriteLine("start");
-    await Task.Delay(1000);
-    Console.WriteLine("finish1");
-    throw new Exception("Example");
-    return "Example";
-}
-static void Demo()
-{
-    var delayTask = DelayAsync();
-    Console.WriteLine("start1");
-    // delayTask.Wait();
-    // {delayTask.Result} // Выдает разные ошибки   AggregateException: One or more errors occurred.
-    // delayTask.GetAwaiter().GetResult()// Выдает саму ошибку
-    Console.WriteLine($"finish2  {delayTask.Result}");
-}

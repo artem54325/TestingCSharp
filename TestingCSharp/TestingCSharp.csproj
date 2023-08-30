@@ -11,6 +11,8 @@
     <ItemGroup>
       <PackageReference Include="BenchmarkDotNet" Version="0.13.7" />
       <PackageReference Include="BenchmarkDotNet.Annotations" Version="0.13.7" />
+      <None Update="AsyncAndMultipleThread/test.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
-
 </Project>
