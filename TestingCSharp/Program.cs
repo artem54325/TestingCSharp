@@ -23,7 +23,7 @@ using TestingCSharp.StringConcatBuilder;
 using TestingCSharp.ПриведениеТипов;
 
 var t = typeof(AsyncDemo).Assembly;
-ПриведениеТипов.Start();
+// ПриведениеТипов.Start();
 // BenchmarkRunner.Run<SpanSum>();
 // AsyncDemo.Demo();
 
@@ -41,6 +41,9 @@ var t = typeof(AsyncDemo).Assembly;
 //     child.Wait();
 //     Console.WriteLine("finished");
 // }
+
+return;
+
 public class Program2 // sealed class - нельзя наследоваться от него
 {
     internal virtual string Test(string q)
