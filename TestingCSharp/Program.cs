@@ -20,10 +20,12 @@ using TestingCSharp.Infrastructure;
 using TestingCSharp.Infrastructure.StructureClass;
 using TestingCSharp.Span;
 using TestingCSharp.StringConcatBuilder;
+using TestingCSharp.ПриведениеТипов;
 
-
+var t = typeof(AsyncDemo).Assembly;
+ПриведениеТипов.Start();
 // BenchmarkRunner.Run<SpanSum>();
-AsyncDemo.Demo();
+// AsyncDemo.Demo();
 
 // static async Task Test()
 // {
@@ -39,3 +41,19 @@ AsyncDemo.Demo();
 //     child.Wait();
 //     Console.WriteLine("finished");
 // }
+public class Program2 // sealed class - нельзя наследоваться от него
+{
+    internal virtual string Test(string q)
+    {
+        return null;
+    }
+}
+
+public sealed class Program3 : Program2
+{
+
+    internal override string Test(string w)
+    {
+        return null;
+    }
+}
