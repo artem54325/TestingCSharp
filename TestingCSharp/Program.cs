@@ -20,6 +20,7 @@ using TestingCSharp.Infrastructure;
 using TestingCSharp.Infrastructure.StructureClass;
 using TestingCSharp.Span;
 using TestingCSharp.StringConcatBuilder;
+using TestingCSharp.ВопросыСобеседования;
 using TestingCSharp.ПриведениеТипов;
 
 var t = typeof(AsyncDemo).Assembly;
@@ -41,7 +42,8 @@ var t = typeof(AsyncDemo).Assembly;
 //     child.Wait();
 //     Console.WriteLine("finished");
 // }
-
+// EnurableTest.Start();
+Интерфейсы.Start();
 return;
 
 public class Program2 // sealed class - нельзя наследоваться от него
