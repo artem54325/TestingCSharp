@@ -14,6 +14,7 @@
 //
 // var actualFilteredList = _directories.All.AsQueryable().Where(lambda).ToList();
 
+using System.Text;
 using BenchmarkDotNet.Running;
 using TestingCSharp.AsyncAndMultipleThread;
 using TestingCSharp.Infrastructure;
@@ -43,7 +44,11 @@ var t = typeof(AsyncDemo).Assembly;
 //     Console.WriteLine("finished");
 // }
 // EnurableTest.Start();
-Интерфейсы.Start();
+// Интерфейсы.Start();
+// StringInterpretator.Start();
+// UsingTest.Start();
+TryCatchTest.Start();
+
 return;
 
 public class Program2 // sealed class - нельзя наследоваться от него
@@ -56,7 +61,6 @@ public class Program2 // sealed class - нельзя наследоваться 
 
 public sealed class Program3 : Program2
 {
-
     internal override string Test(string w)
     {
         return null;
