@@ -47,8 +47,10 @@ var t = typeof(AsyncDemo).Assembly;
 // Интерфейсы.Start();
 // StringInterpretator.Start();
 // UsingTest.Start();
-TryCatchTest.Start();
-
+// TryCatchTest.Start();
+// GsCollection.Start();
+// VolaliteTest.Start();
+ThreadTest.Start();
 return;
 
 public class Program2 // sealed class - нельзя наследоваться от него
