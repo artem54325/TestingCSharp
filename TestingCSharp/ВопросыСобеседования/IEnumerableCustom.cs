@@ -12,7 +12,7 @@ public static class IEnumerableCustom
 
         var massive = getNumber.ToArray();
         Console.WriteLine($"massive length: {massive.Length}; [0]: {massive[0]}");
-
+        
         var firstNumber = getNumber.OrderByDescending(q => q).First();
         Console.WriteLine($"firstNumber length: {firstNumber};");
         var firstOrderNumber = getNumber.OrderByDescending(q => q).First();
@@ -30,7 +30,9 @@ public static class IEnumerableCustom
         
         //Take
         var takeNumber = getAllNumber.Take(2).ToArray();
-        Console.WriteLine($"takeNumber length: {takeNumber};");
+        Console.WriteLine($"takeNumber length: {takeNumber.Length};");
+        var takeSkipNumber = getAllNumber.Skip(2).Take(1).ToArray();
+        Console.WriteLine($"takeNumber length: {takeSkipNumber.Length};");
 
 
         var firstOrDefAllNumber = getAllNumber.First();
