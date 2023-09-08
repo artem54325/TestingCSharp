@@ -43,7 +43,7 @@ var t = typeof(AsyncDemo).Assembly;
 //     child.Wait();
 //     Console.WriteLine("finished");
 // }
-Дженерики.Start();
+// Дженерики.Start();
 // EnurableTest.Start();
 // Интерфейсы.Start();
 // StringInterpretator.Start();
@@ -52,6 +52,7 @@ var t = typeof(AsyncDemo).Assembly;
 // GsCollection.Start();
 // VolaliteTest.Start();
 // ThreadTest.Start();
+IEnumerableCustom.Start();
 return;
 
 public class Program2 // sealed class - нельзя наследоваться от него
