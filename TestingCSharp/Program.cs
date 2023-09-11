@@ -52,7 +52,8 @@ var t = typeof(AsyncDemo).Assembly;
 // GsCollection.Start();
 // VolaliteTest.Start();
 // ThreadTest.Start();
-IEnumerableCustom.Start();
+// IEnumerableCustom.Start();
+ПередачаПоСсылке.Start();
 return;
 
 public class Program2 // sealed class - нельзя наследоваться от него
