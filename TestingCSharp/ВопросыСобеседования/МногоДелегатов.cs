@@ -14,10 +14,12 @@ public class МногоДелегатов
 
     public static decimal first(decimal a)
     {
+        Console.WriteLine($"start first {a}");
         return a * 2;
     }
     public static decimal second(decimal a)
     {
+        Console.WriteLine($"start second {a}");
         return a * 3;
     }
 }
