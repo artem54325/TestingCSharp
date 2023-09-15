@@ -43,6 +43,7 @@ var t = typeof(AsyncDemo).Assembly;
 //     child.Wait();
 //     Console.WriteLine("finished");
 // }
+// Дженерики.Start();
 // EnurableTest.Start();
 // Интерфейсы.Start();
 // StringInterpretator.Start();
@@ -54,26 +55,21 @@ var t = typeof(AsyncDemo).Assembly;
 // IEnumerableCustom.Start();
 // ПередачаПоСсылке.Start();
 // МногоДелегатов.Start();
-// RefValueTye.Start();
-
+AsyncThrow.Start();
 return;
 
-// delegate void qwe(int x, int y);
+public class Program2 // sealed class - нельзя наследоваться от него
+{
+    internal virtual string Test(string q)
+    {
+        return null;
+    }
+}
 
-
-
-// Predicate<double> predicate = (str) = & gt;  
-// {  
-//     double retNum;  
-//     bool isNum = Double.TryParse(Convert.ToString(str), System.Globalization.NumberStyles.Any, System.Globalization.NumberFormatInfo.InvariantInfo, out retNum);  
-//     return isNum;  
-// };  
-// bool found = predicate("12232");  
-
-// public sealed class Program3 : Program2
-// {
-//     internal override string Test(string w)
-//     {
-//         return null;
-//     }
-// }
+public sealed class Program3 : Program2
+{
+    internal override string Test(string w)
+    {
+        return null;
+    }
+}
