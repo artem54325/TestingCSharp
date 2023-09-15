@@ -55,7 +55,8 @@ var t = typeof(AsyncDemo).Assembly;
 // IEnumerableCustom.Start();
 // ПередачаПоСсылке.Start();
 // МногоДелегатов.Start();
-AsyncThrow.Start();
+// AsyncThrow.Start();
+EqualsTest.Start();
 return;
 
 public class Program2 // sealed class - нельзя наследоваться от него
