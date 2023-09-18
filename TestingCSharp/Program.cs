@@ -56,7 +56,15 @@ var t = typeof(AsyncDemo).Assembly;
 // ПередачаПоСсылке.Start();
 // МногоДелегатов.Start();
 // AsyncThrow.Start();
-EqualsTest.Start();
+// EqualsTest.Start();
+// ByteDictionary.Start();
+var k1 = new KeyValuePair<int, int>(10, 29);
+var k2 = new KeyValuePair<int, int>(10, 31);
+Console.WriteLine("k1 - {0}, k2 - {1}", k1.GetHashCode(), k2.GetHashCode());
+
+var v1 = new KeyValuePair<int, string>(10, "abc");
+var v2 = new KeyValuePair<int, string>(10, "def");
+Console.WriteLine("v1 - {0}, v2 - {1}", v1.GetHashCode(), v2.GetHashCode());
 return;
 
 public class Program2 // sealed class - нельзя наследоваться от него
