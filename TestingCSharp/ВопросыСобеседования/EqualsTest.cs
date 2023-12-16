@@ -16,7 +16,7 @@ public class EqualsTest
         
         Console.WriteLine(p1.Equals(p3));  // False
         Console.WriteLine(p1 == p3); // False
-        Console.WriteLine(p1.GetHashCode() == p3.GetHashCode());       // True
+        Console.WriteLine(p1.GetHashCode() == p3.GetHashCode());       // False
     }
 
     private class Person
