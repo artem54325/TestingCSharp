@@ -13,6 +13,13 @@ public static class StringInterpretator
         s5 += "lo";
         String s6 = (string)s1.Clone();
         StringBuilder sb3 = new StringBuilder("Hello");
+        
+        Console.WriteLine("==");
+        Console.WriteLine(s1 == s2); // true
+        Console.WriteLine(s1 == s4); // true
+        Console.WriteLine(s1 == s5); // true
+        Console.WriteLine(s1 == s6); // true
+        Console.WriteLine("REf");
         Console.WriteLine(Object.ReferenceEquals(s1, s2)); // true
         Console.WriteLine(Object.ReferenceEquals(s1, sb3.ToString())); // false
         Console.WriteLine(Object.ReferenceEquals(s1, s4));// true
@@ -29,5 +36,24 @@ public static class StringInterpretator
         Console.WriteLine(Object.ReferenceEquals(s1, s4)); // true
         Console.WriteLine(Object.ReferenceEquals(s1, s5)); // true
         Console.WriteLine(Object.ReferenceEquals(s1, s6)); // true
+        
+        
+        
+        
+        
+        string a = "Test";
+        string b = a;
+        string c = "Test";
+
+        Console.WriteLine(a == c);
+        changeStr(ref b);
+        a += "changed";
+        Console.WriteLine(a == b);
+
+        static void changeStr(ref string s)
+        {
+            s += "changed";
+        }
+
     }
 }

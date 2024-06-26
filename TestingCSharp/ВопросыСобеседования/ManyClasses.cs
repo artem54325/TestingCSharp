@@ -10,6 +10,25 @@ public class ManyClasses
         a.Print2();
         a.Print1();
         c.Print2();
+        Console.WriteLine();
+        Console.WriteLine("вариант-2");
+
+        new ManyClasses().Run();
+    }
+
+    public void Run()
+    {
+        // Base w = new Child();
+        var w = new Child();
+        w.method1();
+        w.method2();
+        Run2(w);
+    }
+
+    public void Run2(Base w)
+    {
+        w.method1();
+        w.method2();
     }
 }
 
@@ -33,8 +52,31 @@ public class B: A
 }
 public class C : B
 {
-    new public void Print2()
+    public new void Print2()
     {
         Console.Write("C");
+    }
+}
+
+public abstract class Base
+{
+    public virtual void method1()
+    {
+        Console.WriteLine("Base.method1");
+    }
+    public void method2()
+    {
+        Console.WriteLine("Base.method2");
+    }
+}
+public class Child : Base
+{
+    public override void method1()
+    {
+        Console.WriteLine("Child.method1");
+    }
+    public void method2()
+    {
+        Console.WriteLine("Child.method2");
     }
 }

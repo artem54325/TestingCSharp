@@ -16,6 +16,13 @@ public class VolaliteTest
 
     public static void Start()
     {
+        long gg = 123;
+        AutoResetEvent evt = new AutoResetEvent(false);
+        evt.Set();
+        evt.WaitOne();
+        ManualResetEventSlim manualResetEvent = new ManualResetEventSlim(false);
+        manualResetEvent.Set();
+        manualResetEvent.Reset();
         new VolaliteTest().Go();
     }
 
