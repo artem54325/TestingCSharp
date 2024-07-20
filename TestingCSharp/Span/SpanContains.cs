@@ -2,6 +2,7 @@ using BenchmarkDotNet.Attributes;
 
 namespace TestingCSharp.Span;
 
+[MemoryDiagnoser]
 public class SpanContains
 {
     private const string TestText = "some big value for test";
