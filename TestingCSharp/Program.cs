@@ -27,7 +27,9 @@ using TestingCSharp.ПриведениеТипов;
 var t = typeof(AsyncDemo).Assembly;
 // ПриведениеТипов.Start();
 // BenchmarkRunner.Run<SpanSum>();
+BenchmarkRunner.Run<SpanContains>();
 // AsyncDemo.Demo();
+// new SpanContains().Slice03();
 
 // static async Task Test()
 // {
@@ -66,59 +68,59 @@ var t = typeof(AsyncDemo).Assembly;
 // var v2 = new KeyValuePair<int, string>(10, "def");
 // Console.WriteLine("v1 - {0}, v2 - {1}", v1.GetHashCode(), v2.GetHashCode());
 
-Foo test = new Bar();
-Console.WriteLine (test.DoSomethingNew());
-Console.WriteLine (test.DoSomethingVirtual());
-Console.WriteLine (test.DoSomethingUsually());
-
-// Console.WriteLine(Exx.GetX());
-return;
-
-public class Foo
-{
-    public string DoSomethingNew() { return "Foo New"; }
-    public virtual string DoSomethingVirtual() { return "Foo Virtual"; }
-    public string DoSomethingUsually() { return "Foo Usually"; }
-}
-public class Bar : Foo
-{
-    public new string DoSomethingNew() { return "Bar new"; }
-    public override string DoSomethingVirtual() { return "Bar Virtual"; }
-    public string DoSomethingUsually() { return "Bar Usually"; }
-}
-
-public class Exx
-{
-    public static int GetX()
-    {
-        try
-        {
-            throw new Exception("Example");
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            return 1;
-        }
-        finally
-        {
-            Console.WriteLine("Exx");
-        }
-    }
-}
-
-public class Program2 // sealed class - нельзя наследоваться от него
-{
-    internal virtual string Test(string q)
-    {
-        return null;
-    }
-}
-
-public sealed class Program3 : Program2
-{
-    internal override string Test(string w)
-    {
-        return null;
-    }
-}
+// Foo test = new Bar();
+// Console.WriteLine (test.DoSomethingNew());
+// Console.WriteLine (test.DoSomethingVirtual());
+// Console.WriteLine (test.DoSomethingUsually());
+//
+// // Console.WriteLine(Exx.GetX());
+// return;
+//
+// public class Foo
+// {
+//     public string DoSomethingNew() { return "Foo New"; }
+//     public virtual string DoSomethingVirtual() { return "Foo Virtual"; }
+//     public string DoSomethingUsually() { return "Foo Usually"; }
+// }
+// public class Bar : Foo
+// {
+//     public new string DoSomethingNew() { return "Bar new"; }
+//     public override string DoSomethingVirtual() { return "Bar Virtual"; }
+//     public string DoSomethingUsually() { return "Bar Usually"; }
+// }
+//
+// public class Exx
+// {
+//     public static int GetX()
+//     {
+//         try
+//         {
+//             throw new Exception("Example");
+//         }
+//         catch (Exception e)
+//         {
+//             Console.WriteLine(e);
+//             return 1;
+//         }
+//         finally
+//         {
+//             Console.WriteLine("Exx");
+//         }
+//     }
+// }
+//
+// public class Program2 // sealed class - нельзя наследоваться от него
+// {
+//     internal virtual string Test(string q)
+//     {
+//         return null;
+//     }
+// }
+//
+// public sealed class Program3 : Program2
+// {
+//     internal override string Test(string w)
+//     {
+//         return null;
+//     }
+// }
