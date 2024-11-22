@@ -12,7 +12,7 @@ public class ManyClasses
         c.Print2();
         Console.WriteLine();
         Console.WriteLine("вариант-2");
-
+        
         new ManyClasses().Run();
     }
 
