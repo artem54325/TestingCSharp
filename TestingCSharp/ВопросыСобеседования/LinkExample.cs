@@ -6,7 +6,9 @@ public class LinkExample
     {
         var list = new List<int>();
         int i = 10;
-        var query = list.Where(x => x == i).Where(x => x < 20);
+        var query = list
+            .Where(x => x == i)
+            .Where(x => x < 20);
 
         i = 15;
         list.Add(10);

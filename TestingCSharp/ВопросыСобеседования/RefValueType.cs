@@ -1,7 +1,6 @@
 namespace TestingCSharp.ВопросыСобеседования;
-public class RefValueTye
+public class RefValueType
 {
-    
     public static void Start()
     {
         int valueType = 2;

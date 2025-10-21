@@ -24,6 +24,34 @@ using TestingCSharp.StringConcatBuilder;
 using TestingCSharp.ВопросыСобеседования;
 using TestingCSharp.ПриведениеТипов;
 
+
+await AsyncThrow.Start();
+
+var numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+var query = numbers
+    .Where(n => {
+        Console.WriteLine($"Where1: проверяем {n}");
+        return n % 2 == 0;
+    })
+    .Select(n => {
+        Console.WriteLine($"Select: преобразуем {n}");
+        return n * 2;
+    })
+    .Where(n => {
+        Console.WriteLine($"Where2: проверяем {n}");
+        return n > 5;
+    });
+
+Console.WriteLine("Запрос построен, но еще не выполнен");
+Console.WriteLine("Начинаем перечисление:");
+
+foreach (var item in query) {
+    Console.WriteLine($"Результат: {item}");
+}
+
+// Замыкание
+
 var t = typeof(AsyncDemo).Assembly;
 // ПриведениеТипов.Start();
 // BenchmarkRunner.Run<SpanSum>();

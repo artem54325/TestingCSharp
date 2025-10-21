@@ -10,10 +10,8 @@ public class ManyClasses
         a.Print2();
         a.Print1();
         c.Print2();
-        Console.WriteLine();
-        Console.WriteLine("вариант-2");
         
-        new ManyClasses().Run();
+        // new ManyClasses().Run();
     }
 
     public void Run()
@@ -36,25 +34,29 @@ public class A
 {
     public virtual void Print1()
     {
-        Console.Write("A");
+        Console.WriteLine("A.Print1");
     }
     public void Print2()
     {
-        Console.Write("A");
+        Console.WriteLine("A.Print2");
     }
 }
 public class B: A
 {
     public override void Print1()
     {
-        Console.Write("B");
+        Console.WriteLine("B.Print1");
+    }
+    public new void Print2()
+    {
+        Console.WriteLine("B.Print2");
     }
 }
 public class C : B
 {
     public new void Print2()
     {
-        Console.Write("C");
+        Console.Write("C.Print2");
     }
 }
 

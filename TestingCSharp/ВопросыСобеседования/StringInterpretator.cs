@@ -19,7 +19,7 @@ public static class StringInterpretator
         Console.WriteLine(s1 == s4); // true
         Console.WriteLine(s1 == s5); // true
         Console.WriteLine(s1 == s6); // true
-        Console.WriteLine("REf");
+        Console.WriteLine("Ref");
         Console.WriteLine(Object.ReferenceEquals(s1, s2)); // true
         Console.WriteLine(Object.ReferenceEquals(s1, sb3.ToString())); // false
         Console.WriteLine(Object.ReferenceEquals(s1, s4));// true
